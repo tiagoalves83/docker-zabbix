@@ -2,12 +2,14 @@
 Zabbix scripts to monitor CPU, memory and I/O of docker containers.
 
 ## Install
-For each Docker Host running a zabbix agent do:
+**For each Docker Host running a zabbix agent do:**
 
-1. Configure zabbix-agent like the following. Replace $ZABBIX_HOME with the path of your Zabbix Agent (e.g. /etc/zabbix) 
+1. Configure zabbix-agent like the following. Replace $ZABBIX_HOME with the path of your Zabbix Agent (e.g. /etc/zabbix)
 
+```
 Include=$ZABBIX_HOME/zabbix_agentd.conf.d/
 AllowRoot=1
+```
 
 2. Add docker-zabbix/scripts files to $ZABBIX_HOME/scripts and make sure all scripts are executable (chmod +x)
 
@@ -15,10 +17,8 @@ AllowRoot=1
 
 4. Start some docker containers
 
-At Zabbix Server do:
+**At Zabbix Server do:**
 
 1. Import docker-zabbix/template/docker-zabbix-template.xml to your Zabbix Server
 
 2. Link the template to Docker Hosts
-
- 
